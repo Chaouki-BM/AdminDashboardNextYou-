@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { ArrowRight, Eye, EyeOff, Lock, Mail } from "lucide-react";
 
 export default function LoginPage({ onLogin }) {
-  const [email, setEmail] = useState("admin@nextyou.app");
-  const [password, setPassword] = useState("nextyou123");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
