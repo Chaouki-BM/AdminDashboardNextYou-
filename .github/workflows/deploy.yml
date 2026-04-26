@@ -28,7 +28,7 @@ jobs:
       # 4. Create .env file
       - name: Create .env file
         run: |
-          echo "VITE_API_URL=http://13.37.249.132:5000" > .env
+          echo "VITE_API_URL=http://52.47.85.180:5000" > .env
 
       # 5. Build React app
       - name: Build
