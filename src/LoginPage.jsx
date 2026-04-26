@@ -207,10 +207,6 @@ export default function LoginPage({ onLogin }) {
                 )}
               </button>
             </form>
-
-            <p className="mono-font mt-5 text-center text-xs text-zinc-500">
-              Demo access enabled for UI preview.
-            </p>
           </section>
         </div>
       </div>
