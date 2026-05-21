@@ -2287,6 +2287,28 @@ export default function AdminDashboard({ onLogout, onAuthError }) {
           box-shadow: 0 0 0 3px rgba(255, 69, 0, 0.12);
         }
 
+        /* Ensure readable text on orange or dark backgrounds */
+        .dashboard-ui [class*="bg-lime-300"],
+        .dashboard-ui [class*="bg-lime-400"],
+        .dashboard-ui [class*="bg-\[#ff4500\]"] {
+          color: #ffffff !important;
+        }
+
+        .dashboard-ui [class*="bg-white/5"],
+        .dashboard-ui [class*="bg-white/10"],
+        .dashboard-ui [class*="bg-white/2"],
+        .dashboard-ui [class*="bg-white/3"],
+        .dashboard-ui [class*="bg-white/[0.02]"] {
+          /* these map to dark surfaces; ensure white text for contrast */
+          color: #ffffff !important;
+        }
+
+        /* Specific override: some badges used dark font on orange background */
+        .dashboard-ui [class*="bg-lime-300"] [class*="text-\#"],
+        .dashboard-ui [class*="bg-lime-400"] [class*="text-\#"] {
+          color: #ffffff !important;
+        }
+
         .dashboard-ui [class*="shadow-[0_0_24px_rgba(198,241,53,0.35)]"],
         .dashboard-ui [class*="shadow-[0_0_18px_rgba(198,241,53,0.18)]"] {
           box-shadow: 0 0 24px rgba(255, 69, 0, 0.28) !important;
