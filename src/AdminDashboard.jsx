@@ -1679,7 +1679,7 @@ export default function AdminDashboard({ onLogout, onAuthError }) {
               {activityFeed.map((activity) => (
                 <div
                   key={activity.id}
-                  className="flex items-center justify-between rounded-lg border border-white/5 bg-white/[0.02] p-3"
+                  className="flex items-center justify-between rounded-lg border border-white/5 bg-white/2 p-3"
                 >
                   <div>
                     <p className="text-sm font-semibold text-zinc-100">
@@ -1804,7 +1804,7 @@ export default function AdminDashboard({ onLogout, onAuthError }) {
         </div>
 
         <div className="glass overflow-auto rounded-xl">
-          <table className="w-full min-w-[240px] text-left text-sm">
+          <table className="w-full min-w-60 text-left text-sm">
             <thead className="border-b border-white/10 bg-white/3 text-xs uppercase tracking-[0.12em] text-zinc-400">
               <tr>
                 <th className="px-4 py-3">User</th>
@@ -2085,7 +2085,7 @@ export default function AdminDashboard({ onLogout, onAuthError }) {
         </div>
 
         <div className="glass overflow-auto rounded-xl">
-          <table className="w-full min-w-[215px] text-left text-sm">
+          <table className="w-full min-w-53.75 text-left text-sm">
             <thead className="border-b border-white/10 bg-white/3 text-xs uppercase tracking-[0.12em] text-zinc-400">
               <tr>
                 <th className="px-4 py-3">User Name</th>
@@ -2146,29 +2146,28 @@ export default function AdminDashboard({ onLogout, onAuthError }) {
         }
 
         .glass {
-          background: linear-gradient(145deg, rgba(255,255,255,0.055), rgba(255,255,255,0.012));
-          border: 1px solid rgba(255,255,255,0.09);
+          background: #1c1c1c;
+          border: 0;
           backdrop-filter: blur(12px);
-          box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), 0 18px 40px rgba(2, 5, 15, 0.5);
+          box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
           transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
         }
 
         .glass:hover {
-          border-color: rgba(198,241,53,0.32);
           transform: translateY(-2px);
-          box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), 0 20px 42px rgba(2, 5, 15, 0.55), 0 0 0 1px rgba(198,241,53,0.08);
+          box-shadow: 0 20px 42px rgba(0, 0, 0, 0.52), 0 0 0 1px rgba(255, 69, 0, 0.08);
         }
 
         .glow-text {
-          text-shadow: 0 0 22px rgba(198,241,53,0.35);
+          text-shadow: 0 0 22px rgba(255, 69, 0, 0.32);
         }
 
         .radial-bg {
           background-image:
-            radial-gradient(circle at 10% 10%, rgba(60, 80, 170, 0.24), transparent 35%),
-            radial-gradient(circle at 82% 16%, rgba(198,241,53,0.12), transparent 28%),
-            radial-gradient(circle at 30% 90%, rgba(85, 130, 255, 0.14), transparent 35%),
-            linear-gradient(135deg, #0a0a0f 5%, #0b1020 38%, #090d18 100%);
+            radial-gradient(circle at 10% 10%, rgba(255, 69, 0, 0.16), transparent 35%),
+            radial-gradient(circle at 82% 16%, rgba(255, 69, 0, 0.08), transparent 28%),
+            radial-gradient(circle at 30% 90%, rgba(255, 69, 0, 0.12), transparent 35%),
+            linear-gradient(135deg, #000000 5%, #0f0f0f 38%, #000000 100%);
           position: relative;
           overflow: hidden;
         }
@@ -2177,29 +2176,90 @@ export default function AdminDashboard({ onLogout, onAuthError }) {
           content: "";
           position: absolute;
           inset: 0;
-          background: linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+          background: linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
           background-size: 42px 42px;
           mask-image: radial-gradient(circle at 50% 40%, black 18%, transparent 82%);
           pointer-events: none;
-          opacity: 0.25;
+          opacity: 0.18;
         }
 
-        .view-anim {
-          animation: view-fade 260ms ease-out;
+        .dashboard-ui {
+          background: #000000 !important;
+          color: #ffffff !important;
+        }
+
+        .dashboard-ui [class*="bg-lime-300"],
+        .dashboard-ui [class*="bg-lime-400"] {
+          background-color: #ff4500 !important;
+          color: #ffffff !important;
+        }
+
+        .dashboard-ui [class*="text-lime-300"],
+        .dashboard-ui [class*="text-lime-400"],
+        .dashboard-ui [class*="hover:text-lime-300"] {
+          color: #ff4500 !important;
+        }
+
+        .dashboard-ui [class*="border-lime-300"],
+        .dashboard-ui [class*="hover:border-lime-300"] {
+          border-color: rgba(255, 69, 0, 0.35) !important;
+        }
+
+        .dashboard-ui [class*="ring-lime-300"] {
+          --tw-ring-color: rgba(255, 69, 0, 0.3) !important;
+        }
+
+        .dashboard-ui [class*="bg-white/5"],
+        .dashboard-ui [class*="bg-white/10"],
+        .dashboard-ui [class*="bg-white/2"],
+        .dashboard-ui [class*="bg-white/[0.02]"],
+        .dashboard-ui [class*="bg-white/3"] {
+          background-color: #2a2a2a !important;
+        }
+
+        .dashboard-ui [class*="border-white/10"],
+        .dashboard-ui [class*="border-white/5"] {
+          border-color: #2a2a2a !important;
+        }
+
+        .dashboard-ui [class*="text-zinc-100"],
+        .dashboard-ui [class*="text-zinc-200"] {
+          color: #ffffff !important;
+        }
+
+        .dashboard-ui [class*="text-zinc-300"],
+        .dashboard-ui [class*="text-zinc-400"],
+        .dashboard-ui [class*="text-zinc-500"] {
+          color: #888888 !important;
         }
 
         .dashboard-ui input,
         .dashboard-ui select,
         .dashboard-ui textarea {
-          border-color: rgba(255,255,255,0.14);
-          transition: border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+          background-color: #2a2a2a !important;
+          border-color: #2a2a2a !important;
+          color: #ffffff !important;
+        }
+
+        .dashboard-ui input::placeholder,
+        .dashboard-ui textarea::placeholder {
+          color: #888888;
         }
 
         .dashboard-ui input:focus,
         .dashboard-ui select:focus,
         .dashboard-ui textarea:focus {
-          border-color: rgba(198,241,53,0.55);
-          box-shadow: 0 0 0 3px rgba(198,241,53,0.12);
+          border-color: rgba(255, 69, 0, 0.55);
+          box-shadow: 0 0 0 3px rgba(255, 69, 0, 0.12);
+        }
+
+        .dashboard-ui [class*="shadow-[0_0_24px_rgba(198,241,53,0.35)]"],
+        .dashboard-ui [class*="shadow-[0_0_18px_rgba(198,241,53,0.18)]"] {
+          box-shadow: 0 0 24px rgba(255, 69, 0, 0.28) !important;
+        }
+
+        .view-anim {
+          animation: view-fade 260ms ease-out;
         }
 
         .dashboard-ui button {
@@ -2212,7 +2272,7 @@ export default function AdminDashboard({ onLogout, onAuthError }) {
         }
 
         .dashboard-ui ::-webkit-scrollbar-thumb {
-          background: linear-gradient(#5e6d2a, #8fa63f);
+          background: linear-gradient(#ff4500, #b93a00);
           border-radius: 999px;
         }
 
@@ -2236,8 +2296,8 @@ export default function AdminDashboard({ onLogout, onAuthError }) {
         <div className="flex">
           <aside
             className={`fixed z-40 h-screen border-r border-white/10 bg-[#090b12]/95 p-3 backdrop-blur transition-all duration-300 lg:sticky lg:top-0 ${
-              sidebarCollapsed ? "w-[88px]" : "w-[260px]"
-            } ${sidebarOpen ? "left-0" : "-left-[280px] lg:left-0"}`}
+              sidebarCollapsed ? "w-22" : "w-65"
+            } ${sidebarOpen ? "left-0" : "-left-70 lg:left-0"}`}
           >
             <div className="flex h-full flex-col">
               <div className="mb-6 flex items-center justify-between">
@@ -2283,7 +2343,7 @@ export default function AdminDashboard({ onLogout, onAuthError }) {
                 {sidebarCollapsed ? "Expand" : "Collapse"}
               </button>
 
-              <div className="mt-auto rounded-xl border border-white/10 bg-white/[0.02] p-3">
+              <div className="mt-auto rounded-xl border border-white/10 bg-white/2 p-3">
                 <div className="flex items-center gap-3">
                   <div className="grid h-9 w-9 place-content-center rounded-full bg-lime-300/15 text-sm text-lime-300 ring-1 ring-lime-300/30">
                     AD
@@ -2307,7 +2367,7 @@ export default function AdminDashboard({ onLogout, onAuthError }) {
 
           <div
             className={`flex-1 transition-all duration-300 ${
-              sidebarCollapsed ? "lg:ml-[88px]" : "lg:ml-[260px]"
+              sidebarCollapsed ? "lg:ml-22" : "lg:ml-65"
             }`}
           >
             <header className="sticky top-0 z-30 border-b border-white/10 bg-[#0b0d15]/80 px-4 py-3 backdrop-blur sm:px-6">
@@ -2338,7 +2398,7 @@ export default function AdminDashboard({ onLogout, onAuthError }) {
 
                 <button className="relative rounded-lg border border-white/10 p-2 text-zinc-200">
                   <Bell size={17} />
-                  <span className="absolute -right-1 -top-1 rounded-full bg-lime-300 px-1.5 py-[1px] font-mono text-[10px] text-[#11131a]">
+                  <span className="absolute -right-1 -top-1 rounded-full bg-lime-300 px-1.5 py-px font-mono text-[10px] text-[#11131a]">
                     {notifications}
                   </span>
                 </button>
@@ -2353,7 +2413,7 @@ export default function AdminDashboard({ onLogout, onAuthError }) {
               </div>
             </header>
 
-            <main className="mx-auto w-full max-w-[1600px] p-4 sm:p-6">
+            <main className="mx-auto w-full max-w-400 p-4 sm:p-6">
               {activeView === "dashboard" && renderDashboard()}
               {activeView === "users" && renderUsers()}
               {activeView === "exercises" && renderExercises()}
@@ -2585,7 +2645,7 @@ export default function AdminDashboard({ onLogout, onAuthError }) {
                 />
               </div>
 
-              <div className="rounded-lg border border-white/10 bg-white/[0.02] p-3">
+              <div className="rounded-lg border border-white/10 bg-white/2 p-3">
                 <p className="text-xs uppercase tracking-[0.12em] text-zinc-400">
                   workoutData
                 </p>

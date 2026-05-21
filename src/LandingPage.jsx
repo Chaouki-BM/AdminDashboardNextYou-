@@ -36,7 +36,7 @@ export default function LandingPage() {
   const navigate = useNavigate();
 
   return (
-    <div className="landing-ui min-h-screen bg-[#0A0A0F] text-zinc-100">
+    <div className="landing-ui min-h-screen bg-[#000000] text-white">
       <style>{`
         .landing-ui .brand-font {
           font-family: "Rajdhani", "Barlow Condensed", sans-serif;
@@ -44,18 +44,18 @@ export default function LandingPage() {
         }
 
         .landing-ui .glass {
-          background: linear-gradient(145deg, rgba(255,255,255,0.06), rgba(255,255,255,0.015));
-          border: 1px solid rgba(255,255,255,0.1);
-          box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), 0 24px 45px rgba(2, 5, 15, 0.58);
-          backdrop-filter: blur(14px);
+          background: #1c1c1c;
+          border: 0;
+          box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+          backdrop-filter: blur(12px);
         }
 
         .landing-ui .ath-bg {
           background-image:
-            radial-gradient(circle at 15% 15%, rgba(56, 84, 182, 0.34), transparent 35%),
-            radial-gradient(circle at 84% 22%, rgba(198,241,53,0.17), transparent 28%),
-            radial-gradient(circle at 34% 89%, rgba(58, 112, 240, 0.18), transparent 35%),
-            linear-gradient(140deg, #07080f 10%, #0a1222 46%, #070b16 100%);
+            radial-gradient(circle at 15% 15%, rgba(255, 69, 0, 0.18), transparent 35%),
+            radial-gradient(circle at 84% 22%, rgba(255, 69, 0, 0.1), transparent 28%),
+            radial-gradient(circle at 34% 89%, rgba(255, 69, 0, 0.12), transparent 35%),
+            linear-gradient(140deg, #000000 10%, #0f0f0f 46%, #000000 100%);
           position: relative;
           overflow: hidden;
         }
@@ -65,9 +65,9 @@ export default function LandingPage() {
           position: absolute;
           inset: 0;
           pointer-events: none;
-          background: linear-gradient(to right, rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+          background: linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
           background-size: 48px 48px;
-          opacity: 0.32;
+          opacity: 0.2;
           mask-image: radial-gradient(circle at 50% 44%, black 20%, transparent 82%);
         }
 
@@ -81,32 +81,32 @@ export default function LandingPage() {
           justify-content: center;
           gap: 0.5rem;
           border: 0;
-          border-radius: 0.5rem;
-          background: #c6f135;
-          color: #10120e;
+          border-radius: 9999px;
+          background: #ff4500;
+          color: #ffffff;
           font-size: 0.92rem;
-          font-weight: 600;
+          font-weight: 700;
           padding: 0.625rem 1rem;
           text-decoration: none;
-          box-shadow: 0 0 28px rgba(198,241,53,0.3);
+          box-shadow: 0 0 28px rgba(255, 69, 0, 0.28);
           transition: filter 180ms ease;
           cursor: pointer;
         }
 
         .landing-ui .btn-primary:hover {
-          filter: brightness(1.1);
+          filter: brightness(1.06);
         }
 
         .landing-ui .btn-outline {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          border-radius: 0.5rem;
-          border: 1px solid rgba(255,255,255,0.14);
-          background: rgba(255,255,255,0.05);
-          color: #f4f4f5;
+          border-radius: 9999px;
+          border: 1px solid #2a2a2a;
+          background: #2a2a2a;
+          color: #ffffff;
           font-size: 0.92rem;
-          font-weight: 600;
+          font-weight: 700;
           padding: 0.625rem 1rem;
           text-decoration: none;
           transition: border-color 180ms ease, box-shadow 180ms ease;
@@ -114,8 +114,8 @@ export default function LandingPage() {
         }
 
         .landing-ui .btn-outline:hover {
-          border-color: rgba(198,241,53,0.55);
-          box-shadow: 0 0 0 3px rgba(198,241,53,0.12);
+          border-color: rgba(255, 69, 0, 0.55);
+          box-shadow: 0 0 0 3px rgba(255, 69, 0, 0.12);
         }
 
         .landing-ui .btn-outline:disabled {
@@ -138,27 +138,27 @@ export default function LandingPage() {
       <div className="ath-bg relative min-h-screen px-4 py-6 sm:px-8">
         <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-4">
           <header className="fade-up flex items-center gap-3">
-            <div className="glass grid h-10 w-10 place-items-center rounded-xl text-lime-300">
+            <div className="glass grid h-10 w-10 place-items-center rounded-xl text-[#ff4500]">
               <span className="brand-font text-lg font-bold">N</span>
             </div>
             <div>
-              <p className="brand-font text-[11px] uppercase tracking-[0.3em] text-lime-300">
+              <p className="brand-font text-[11px] uppercase tracking-[0.3em] text-[#ff4500]">
                 NextYou Platform
               </p>
-              <h1 className="brand-font text-2xl font-bold text-zinc-100">
+              <h1 className="brand-font text-2xl font-bold text-white">
                 NextYou
               </h1>
             </div>
           </header>
 
           <section className="fade-up glass rounded-2xl p-5 sm:p-7">
-            <p className="brand-font text-xs uppercase tracking-[0.3em] text-lime-300">
+            <p className="brand-font text-xs uppercase tracking-[0.3em] text-[#ff4500]">
               Performance Workspace
             </p>
-            <h2 className="brand-font mt-3 text-4xl font-bold leading-[0.9] text-zinc-100 sm:text-6xl">
+            <h2 className="brand-font mt-3 text-4xl font-bold leading-[0.9] text-white sm:text-6xl">
               A single control center for growth, users, and operations.
             </h2>
-            <p className="mt-4 max-w-3xl text-zinc-300">
+            <p className="mt-4 max-w-3xl text-[#888888]">
               NextYou gives your team instant visibility into platform activity,
               plan delivery, and member progress so every decision stays fast,
               informed, and consistent.
@@ -180,10 +180,10 @@ export default function LandingPage() {
 
           <section className="fade-up">
             <div className="mb-3">
-              <p className="brand-font text-xs uppercase tracking-[0.3em] text-lime-300">
+              <p className="brand-font text-xs uppercase tracking-[0.3em] text-[#ff4500]">
                 Core Features
               </p>
-              <h3 className="brand-font mt-1 text-3xl font-bold text-zinc-100">
+              <h3 className="brand-font mt-1 text-3xl font-bold text-white">
                 Built for team velocity
               </h3>
             </div>
@@ -191,13 +191,13 @@ export default function LandingPage() {
             <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
               {FEATURES.map(({ icon: Icon, title, description }) => (
                 <article key={title} className="glass rounded-2xl p-5">
-                  <div className="mb-3 inline-flex rounded-lg bg-lime-300/10 p-2 text-lime-300">
+                  <div className="mb-3 inline-flex rounded-lg bg-[#2a2a2a] p-2 text-[#ff4500]">
                     <Icon size={18} />
                   </div>
-                  <h4 className="brand-font text-xl font-semibold text-zinc-100">
+                  <h4 className="brand-font text-xl font-semibold text-white">
                     {title}
                   </h4>
-                  <p className="mt-2 text-zinc-400">{description}</p>
+                  <p className="mt-2 text-[#888888]">{description}</p>
                 </article>
               ))}
             </div>
@@ -205,22 +205,22 @@ export default function LandingPage() {
 
           <section id="download" className="fade-up">
             <div className="mb-3">
-              <p className="brand-font text-xs uppercase tracking-[0.3em] text-lime-300">
+              <p className="brand-font text-xs uppercase tracking-[0.3em] text-[#ff4500]">
                 Mobile App
               </p>
-              <h3 className="brand-font mt-1 text-3xl font-bold text-zinc-100">
+              <h3 className="brand-font mt-1 text-3xl font-bold text-white">
                 Download NextYou on mobile
               </h3>
             </div>
 
             <div className="glass grid gap-5 rounded-2xl p-5 md:grid-cols-[auto_1fr] md:items-center">
-              <div className="rounded-xl border border-white/10 bg-white/5 p-3">
+              <div className="rounded-xl border border-[#ff4500]/35 bg-[#1c1c1c] p-3 shadow-[0_0_24px_rgba(255,69,0,0.18)]">
                 <QRCodeSVG
                   value={APK_URL}
                   size={190}
                   level="M"
-                  bgColor="#FFFFFF"
-                  fgColor="#10120E"
+                  bgColor="#1C1C1C"
+                  fgColor="#FF4500"
                 />
               </div>
 
@@ -249,7 +249,7 @@ export default function LandingPage() {
           </section>
 
           <section className="fade-up glass grid justify-items-center gap-4 rounded-2xl p-6 text-center">
-            <h3 className="brand-font text-3xl font-bold text-zinc-100">
+            <h3 className="brand-font text-3xl font-bold text-white">
               Ready to continue?
             </h3>
             <button
