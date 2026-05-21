@@ -1569,12 +1569,8 @@ export default function AdminDashboard({ onLogout, onAuthError }) {
                 <p className="mt-3 font-mono text-[44px] leading-none text-lime-300 glow-text">
                   {card.value}
                 </p>
-                <div className="mt-3 flex items-center gap-3">
-                  <div
-                    className="h-8 w-[60%] rounded-full bg-[#ff4500]"
-                    style={{ width: barWidth }}
-                  />
-                  <span className="inline-block rounded-full bg-emerald-600 px-3 py-1 text-xs text-white ring-1 ring-white/10">
+                <div className="mt-3">
+                  <span className="inline-block rounded-full bg-[#ff4500] px-3 py-1 text-xs text-white ring-1 ring-white/10">
                     {card.delta}
                   </span>
                 </div>
