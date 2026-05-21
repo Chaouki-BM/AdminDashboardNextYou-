@@ -2196,7 +2196,9 @@ export default function AdminDashboard({ onLogout, onAuthError }) {
 
         .dashboard-ui [class*="text-lime-300"],
         .dashboard-ui [class*="text-lime-400"],
-        .dashboard-ui [class*="hover:text-lime-300"] {
+        .dashboard-ui [class*="text-lime-500"],
+        .dashboard-ui [class*="hover:text-lime-300"],
+        .dashboard-ui [class*="hover:text-lime-400"] {
           color: #ff4500 !important;
         }
 
@@ -2247,6 +2249,10 @@ export default function AdminDashboard({ onLogout, onAuthError }) {
           color: #ff4500 !important;
           background: rgba(255, 69, 0, 0.08) !important;
           box-shadow: inset 0 0 0 1px rgba(255, 69, 0, 0.16);
+        }
+
+        .dashboard-ui .glow-text {
+          text-shadow: 0 0 14px rgba(255, 69, 0, 0.28);
         }
 
         .dashboard-ui input,
