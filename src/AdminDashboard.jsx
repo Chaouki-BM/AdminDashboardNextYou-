@@ -1551,19 +1551,31 @@ export default function AdminDashboard({ onLogout, onAuthError }) {
               value: animatedStats.trainingPlans,
               delta: "Live from API",
             },
-          ].map((card) => (
-            <div key={card.key} className="glass rounded-xl p-4">
-              <p className="text-xs tracking-[0.2em] text-zinc-400 uppercase">
-                {card.title}
-              </p>
-              <p className="mt-2 font-mono text-3xl text-lime-300 glow-text">
-                {card.value}
-              </p>
-              <p className="mt-2 inline-block rounded-full bg-lime-400/10 px-3 py-1 text-xs text-lime-300 ring-1 ring-lime-300/25">
-                {card.delta}
-              </p>
-            </div>
-          ))}
+          ].map((card) => {
+            const barWidth =
+              card.key === "totalUsers"
+                ? "62%"
+                : card.key === "activeSessions"
+                  ? "42%"
+                  : card.key === "nutritionPlans"
+                    ? "40%"
+                    : "40%";
+
+            return (
+              <div key={card.key} className="glass rounded-2xl p-5">
+                <p className="text-xs uppercase tracking-[0.32em] text-zinc-400">
+                  {card.title}
+                </p>
+                <p className="mt-3 font-mono text-[44px] leading-none text-lime-300 glow-text">
+                  {card.value}
+                </p>
+                <div
+                  className="mt-4 h-8 w-[60%] rounded-full bg-[#ff4500]"
+                  style={{ width: barWidth }}
+                />
+              </div>
+            );
+          })}
         </div>
 
         <div className="grid gap-6 xl:grid-cols-3">
