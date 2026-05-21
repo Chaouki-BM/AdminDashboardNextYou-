@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
+import { Navigate, Route, Routes } from "react-router-dom";
 import AdminDashboard from "./AdminDashboard";
 import LoginPage from "./LoginPage";
+import LandingPage from "./LandingPage";
 import { ADMIN_LOGIN_URL, clearAdminSession, parseApiResponse } from "./api";
 
 function App() {
@@ -48,11 +50,35 @@ function App() {
     return null;
   }
 
-  if (!isAuthenticated) {
-    return <LoginPage onLogin={handleLogin} />;
-  }
-
-  return <AdminDashboard onLogout={handleLogout} onAuthError={handleLogout} />;
+  return (
+    <Routes>
+      <Route path="/" element={<LandingPage />} />
+      <Route
+        path="/login"
+        element={
+          isAuthenticated ? (
+            <Navigate to="/dashboard" replace />
+          ) : (
+            <LoginPage onLogin={handleLogin} />
+          )
+        }
+      />
+      <Route
+        path="/dashboard"
+        element={
+          isAuthenticated ? (
+            <AdminDashboard
+              onLogout={handleLogout}
+              onAuthError={handleLogout}
+            />
+          ) : (
+            <Navigate to="/login" replace />
+          )
+        }
+      />
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
+  );
 }
 
 export default App;
