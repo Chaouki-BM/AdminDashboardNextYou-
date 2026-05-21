@@ -2233,6 +2233,22 @@ export default function AdminDashboard({ onLogout, onAuthError }) {
           color: #888888 !important;
         }
 
+        .dashboard-ui aside nav button {
+          color: #888888 !important;
+        }
+
+        .dashboard-ui aside nav button:hover {
+          color: #ffffff !important;
+          background: rgba(255, 255, 255, 0.04) !important;
+        }
+
+        .dashboard-ui aside nav button[class*="bg-lime-300/10"],
+        .dashboard-ui aside nav button[class*="text-lime-300"] {
+          color: #ff4500 !important;
+          background: rgba(255, 69, 0, 0.08) !important;
+          box-shadow: inset 0 0 0 1px rgba(255, 69, 0, 0.16);
+        }
+
         .dashboard-ui input,
         .dashboard-ui select,
         .dashboard-ui textarea {
